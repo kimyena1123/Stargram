@@ -26,7 +26,6 @@ function register(){
             icon: 'success',
             title: '회원가입에 성공했습니다.',
         });
-
-        document.location.href="/user/login";
+        setTimeout("location.href='/user/login'", 1000);
     });
 }
