@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+}
+header{
+    height: 70px;
+}
+.headerPosit{
+    height: 100%;
+    border: 1px solid red;
+    background: pink;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.userSelect ul{
+    list-style: none;
+    border: 1px solid black;
+    width: 300px;
+    display: flex;
+    justify-content: space-around;
+}
+.userSelect ul li{
+    border : 1px solid red;
+}
+section{
+    background: yellow;
+    height: 500px;
+}
+footer{
+    background: green;
+    height: 100px;
+}
