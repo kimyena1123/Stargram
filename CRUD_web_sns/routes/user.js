@@ -10,7 +10,9 @@ router.get('/join', controller.getJoin);
 router.post('/join', controller.postJoin);
 //GET /user/login
 router.get('/login', controller.getLogin);
-//GET /user/infoEdit
-router.get('/infoEdit', controller.getInfoEdit);
+//POST /user/login
+router.post('/login', controller.postLogin);
+//GET /user/mypageInfo
+router.get('/mypageInfo', controller.getmypageInfo);
 
 module.exports = router;

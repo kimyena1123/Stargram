@@ -18,16 +18,26 @@
                     </form>
                 </div>
                 <div class = "userSelect">
-                    <ul>
-                        <li><a href = "/">홈</a></li>
-                        <li><a href = "/user/login">로그인</a></li>
-                        <li><a href = "#">로그아웃</a></li>
-                        <li><a href = "/user/infoEdit">마이페이지</a></li>
-                    </ul>
+                    
+                    <% if(isLogin) { %>
+                        <p><%= user %>님 안녕하세요</p>
+                        <ul>
+                            <li><a href = "/">홈</a></li>
+                            <li><a href = "/user/login">로그인</a></li>
+                            <li><a href = "#">로그아웃</a></li>
+                            <li><a href = "/user/mypageInfo">마이페이지</a></li>
+                        </ul>
+                    <% } else { %>
+                        <ul>
+                            <li><a href = "/">홈</a></li>
+                            <li><a href = "/user/login">로그인</a></li>
+                        </ul>
+                    <% } %>
+                    
                 </div>
             </div>
         </header>
-        <section>section</section>
+        <section><h1>Main page</h1></section>
         <footer>footer</footer>
     </div>
 </body>

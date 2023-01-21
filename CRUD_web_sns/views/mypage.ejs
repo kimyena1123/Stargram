@@ -5,8 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>mypage</title>
+    <!-- axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body>
     <h1>마이페이지</h1>
+
+    
+    <form name="form_user_info">
+        <h1><%= user_info.user_id %></h1>
+        <label>ID</label><br/>
+        <input type="text" name="user_id" value="<%= user_info.user_id %>"><br/>
+
+        <label>PW</label><br/>
+        <input type="text" name="user_pw" value="<%= user_info.user_pw %>"><br/>
+
+        <label>NAME</label><br/>
+        <input type="text" name="user_name" value="<%= user_info.user_name %>"><br/>
+
+        <label>BIRTH</label><br/>
+        <input type="text" name="user_birth"><br/>
+    </form>
 </body>
 </html>
