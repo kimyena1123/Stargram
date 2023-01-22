@@ -29,7 +29,14 @@ CREATE TABLE `user`(
     ON UPDATE CASCADE
     ON DELETE CASCADE
  )ENGINE=InnoDB DEFAULT CHARSET = utf8mb4;
+
+INSERT INTO `post` (userId, content, img_src, createdAt, updatedAt)
+VALUE (3, '첫 게시물!', 'https://blog.kakaocdn.net/dn/bTEhUV/btqECug9iOs/mxgZUk4MLJVCK3xtcNe6NK/img.jpg', now(), now());
  
+
+INSERT INTO `post` (userId, content, img_src, createdAt, updatedAt)
+VALUE (4, '풍경이 예뻐요', 'https://cdn.pixabay.com/photo/2019/08/01/12/36/illustration-4377408_960_720.png', now(), now());
+  
  CREATE TABLE `comment`(
 	`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     `userId` INT NOT NULL,

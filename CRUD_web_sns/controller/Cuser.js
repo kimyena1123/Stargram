@@ -75,15 +75,35 @@ exports.getmypageInfo = (req, res) => {
     console.log('getMypage에서 req.body 확인 >> ', req.body);
     console.log('getMaypage에서 index보기 >> ', req.session.user_index);
 
-    models.User.findOne({
-        where: {
-            id: req.session.user_index
-        }
-    }).then((result) => {
-        console.log('findOll >> ', result);
+    if(req.session.user_index){
+        models.User.findOne({
+            where: {id: req.session.user_index},
+            include: [
+                {
+                    model: models.Post,
+                    attributes: ['userId']
+                },
+                {
+                    model: models.Likes,
+                    attributes: ['userId']
+                }
+            ]
+        }).then((result) => {
+            console.log('findOne >> ', result);
+            console.log('include의 post >> ', result.posts);
+            UserData = result;
 
-        res.render('mypage', {user_info: result});
-    })
+            //select * from `post` where userId = req.session.user_index
+            models.Post.findOne({
+                where: {userId: req.session.user_index},
+            }).then((result) => {
+                
+                res.render('mypage', {UserData: UserData, PostData: result});
+            })
+    
 
-   
+        })
+    }else{
+        res.render('login');
+    }
 };
