@@ -94,9 +94,18 @@ exports.getmypageInfo = (req, res) => {
             UserData = result;
 
             //select * from `post` where userId = req.session.user_index
-            models.Post.findOne({
+            //findOnd이 아닌 이유
+            // => Limit 1이 아닌 해당 유저가 올린 모든 게시물(All)을 보여줘야 하기 때문.
+            models.Post.findAll({
                 where: {userId: req.session.user_index},
+                include: [
+                    {
+                        model: models.Likes,
+                        attributes: ['userId', 'postId']
+                    }
+                ]
             }).then((result) => {
+                console.log('Post의 result >> ', result)
                 
                 res.render('mypage', {UserData: UserData, PostData: result});
             })
@@ -107,3 +116,20 @@ exports.getmypageInfo = (req, res) => {
         res.render('login');
     }
 };
+
+//마이페이지 수정(User 정보)
+exports.postProfileEdit = (req, res) => {
+    models.User.update({
+        user_id: req.body.user_id,
+        user_pw: req.body.user_pw,
+        user_name: req.body.user_name,
+        user_birth: req.body.user_birth
+    },
+    {
+        where: {id: req.session.user_index}
+    }).then((result) => {
+        console.log('profile update >> ', result);
+
+        res.send('수정 성공');
+    })
+}

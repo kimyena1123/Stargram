@@ -33,7 +33,9 @@ CREATE TABLE `user`(
 INSERT INTO `post` (userId, content, img_src, createdAt, updatedAt)
 VALUE (3, '첫 게시물!', 'https://blog.kakaocdn.net/dn/bTEhUV/btqECug9iOs/mxgZUk4MLJVCK3xtcNe6NK/img.jpg', now(), now());
  
-
+INSERT INTO `post` (userId, content, img_src, createdAt, updatedAt)
+VALUE (3, '첫 게시물!', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzuvA59GPi-APl7owF6UjLQt8Kr91iJ1vDxg&usqp=CAU', now(), now());
+ 
 INSERT INTO `post` (userId, content, img_src, createdAt, updatedAt)
 VALUE (4, '풍경이 예뻐요', 'https://cdn.pixabay.com/photo/2019/08/01/12/36/illustration-4377408_960_720.png', now(), now());
   

@@ -8,11 +8,29 @@
     <!-- axios -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
+<style>
+    #profile_img{
+        width: 150px;
+        height: 150px;
+        border: 1px solid red;
+        background-color: pink;
+        border-radius: 50%;
+    }
+    img{
+        width: 150px;
+        height: 150px;
+    }
+</style>
 <body>
     <h1>마이페이지</h1>
-
     
-    <form name="form_user_info">
+    <img id = "profile_img" src="<%= UserData.profile_img %>" />
+
+    <button type = "button">프로필 편집</button>
+    <p>한줄 소개</p>
+
+    <hr>
+    <form name="form_user">
         <label>ID</label><br/>
         <input type="text" name="user_id" value="<%= UserData.user_id %>"><br/>
 
@@ -24,10 +42,18 @@
 
         <label>BIRTH</label><br/>
         <input type="text" name="user_birth" value="<%= UserData.user_birth %>"><br/>
+        
+        <button type="button" onclick="editProfile();">수정하기</button>
     </form>
 
+
     <form name="form_post">
-       <img src = "<%= PostData.img_src %>">
+        <% for(let i = 0; i < PostData.length; i++) { %>
+            <img src = "<%= PostData[i].img_src %>">
+        <% } %>
     </form>
+    
+
+    <script src="../static/js/mypage.js"></script>
 </body>
 </html>

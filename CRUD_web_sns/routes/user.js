@@ -14,5 +14,7 @@ router.get('/login', controller.getLogin);
 router.post('/login', controller.postLogin);
 //GET /user/mypageInfo
 router.get('/mypageInfo', controller.getmypageInfo);
+// POST /user/profile/edit
+router.post('/profile/edit', controller.postProfileEdit);
 
 module.exports = router;
