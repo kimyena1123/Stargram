@@ -12,9 +12,12 @@ router.post('/join', controller.postJoin);
 router.get('/login', controller.getLogin);
 //POST /user/login
 router.post('/login', controller.postLogin);
+
 //GET /user/mypageInfo
 router.get('/mypageInfo', controller.getmypageInfo);
-// POST /user/profile/edit
-router.post('/profile/edit', controller.postProfileEdit);
-
+//POST /user/mypage/userInfo
+router.post('/mypage/userInfo', controller.postUserInfoEdit);
+//POST /user/mypage/idTest
+router.post('/mypage/idTest', controller.postIdTest);
+//POST /user/mypage/pwTest
 module.exports = router;

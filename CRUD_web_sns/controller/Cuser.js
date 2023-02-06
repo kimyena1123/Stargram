@@ -107,29 +107,43 @@ exports.getmypageInfo = (req, res) => {
             }).then((result) => {
                 console.log('Post의 result >> ', result)
                 
-                res.render('mypage', {UserData: UserData, PostData: result});
+                res.render('mypage', {isLogin: true, user:req.session.user_id, UserData: UserData, PostData: result});
             })
-    
-
         })
     }else{
         res.render('login');
     }
 };
 
-//마이페이지 수정(User 정보)
-exports.postProfileEdit = (req, res) => {
+//마이페이지 내 정보 수정(user테이블)
+exports.postUserInfoEdit = (req, res) => {
     models.User.update({
         user_id: req.body.user_id,
         user_pw: req.body.user_pw,
         user_name: req.body.user_name,
-        user_birth: req.body.user_birth
+        user_birth: req.body.user_birth,
     },
     {
         where: {id: req.session.user_index}
     }).then((result) => {
-        console.log('profile update >> ', result);
-
         res.send('수정 성공');
+    })
+}
+
+//마이페이지 id 중복 확인
+exports.postIdTest = (req, res) => {
+    console.log('Cuser에서 req.user_id 확인 >> ', req.body.user_id);
+
+    models.User.findOne({
+        where: {user_id : req.body.user_id},
+    }).then((result) => {
+        console.log('result 결과값 >> ', result);
+        //req.body.user_id는 사용자가 압력한 user_id 값
+        
+        if(result === null) { // 아이디가 중복되지 않았다는 의미
+            res.send({isCheck:true, nowUserId: req.session.user_id});
+        }else{
+            res.send({isCheck:false, nowUserId: req.session.user_id});
+        }
     })
 }
