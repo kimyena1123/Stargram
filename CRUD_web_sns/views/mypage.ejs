@@ -289,8 +289,8 @@
                     <div class="myPostImgs">
                         <% for(let i = 0; i < PostData.length; i++) { %>
                            <div class="imgBtn">
-                                <img src = "<%= PostData[i].img_src %>" data-post-img="<%= i %>">
-                                <button type="button" class="postBtn" data-post-id="<%= i %>" onclick="postDelete();">삭제하기</button>
+                                <img src = "<%= PostData[i].img_src %>" data-img="<%= i %>">
+                                <button type="button" class="postBtn" onclick="postDeleteBtn('<%= PostData[i].id %>')">삭제하기</button>
                             </div>
                         <% } %>
                     </div>

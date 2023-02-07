@@ -27,6 +27,8 @@ liMyLikesPage.addEventListener("click", function(){
     secondSection.classList.add('d-none');
 });
 
+//######################내 정보##############################
+
 function userinfoEdit(){
     const form = document.forms['form_userTableInfo'];
     console.log('form select >> ', form);
@@ -104,4 +106,29 @@ function idTest(){
             }
         })
 
+}
+
+//########################내 게시물###########################
+
+function postDeleteBtn(deleteId){
+    let postBtn = document.querySelectorAll(".postBtn");
+
+    //console.log('btn check >> ', postBtn); //array
+    console.log('id >> , ', deleteId);
+    
+    //axios
+    //: 삭제하고 싶은 게시물의 id 전달 -> 해당 id 삭제
+    //delete from `post` where id = deleteId
+    axios({
+        method: 'post',
+        url: '/user/mypage/myPostDelete',
+        data: {
+            id: deleteId,
+        },
+    }).then((res) => {
+        return res.data;
+    }).then((data) => {
+        alert(data);
+        location.reload();
+    })
 }

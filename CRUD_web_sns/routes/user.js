@@ -20,4 +20,7 @@ router.post('/mypage/userInfo', controller.postUserInfoEdit);
 //POST /user/mypage/idTest
 router.post('/mypage/idTest', controller.postIdTest);
 //POST /user/mypage/pwTest
+
+//POST /user/mypage/myPostDelete
+router.post('/mypage/myPostDelete', controller.postMyPostDelete);
 module.exports = router;

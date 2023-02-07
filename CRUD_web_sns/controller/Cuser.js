@@ -39,6 +39,7 @@ exports.getLogin = (req, res) => {
 //로그인 정보 불일치 => 경로 이동
 exports.postLogin = (req, res) => { //return res.data;
     console.log('req.body.user_id >> ', req.body.user_id);
+    console.log('req.body.user_pw >> ', req.body.user_pw);
 
 //SELECT * FROM `user` WHERE user_id = `${data.user_id} AND user_pw = `${data.user_pw}` LIMIT 1
     models.User.findOne({
@@ -47,15 +48,15 @@ exports.postLogin = (req, res) => { //return res.data;
             user_pw: req.body.user_pw,
         }
     }).then((result) =>{
-        console.log('로그인 창에서 result 확인 >> ', result);
-        console.log('로그인 창에서 dataValue 확인 >> ', result.dataValues);
-        console.log('!!!!!!!!!!');
-        console.log('로그인 창에서 dataValue 확인 >> ', result.dataValues.id);
+        console.log('로그인 창에서 result 확인 >> ', result); // 없으면 null
+        // console.log('로그인 창에서 dataValue 확인 >> ', result.dataValues);
+        // console.log('!!!!!!!!!!');
+        // console.log('로그인 창에서 dataValue 확인 >> ', result.dataValues.id);
+
         if(result === null){ // 로그인 실패 => null
             //세션 없을 떄 확인 >>  undefined
             console.log('세션 없을 떄 확인 >> ', req.session.user_id);
             res.send(false);
-
         }else{ // 로그인 성공 // 객체로
             console.log('로그인 성공 후 req.body >> ', req.body); // { user_id: '1', user_pw: '1' }
             console.log("req.body.user_id 확인!!!!>> ", req.body.user_id);
@@ -105,7 +106,11 @@ exports.getmypageInfo = (req, res) => {
                     }
                 ]
             }).then((result) => {
-                console.log('Post의 result >> ', result)
+                console.log('Post의 result !!postData>> ', result)
+                console.log('postData.length >> ', result.length);
+                console.log('post[0]', result[0]);
+                console.log('post[1]', result[1]);
+                console.log('post[2], ', result[2]);
                 
                 res.render('mypage', {isLogin: true, user:req.session.user_id, UserData: UserData, PostData: result});
             })
@@ -145,5 +150,19 @@ exports.postIdTest = (req, res) => {
         }else{
             res.send({isCheck:false, nowUserId: req.session.user_id});
         }
+    })
+}
+
+//마이페이지 -> 내 게시물 -> 내가 원하는 게시물 삭제하기
+//GET /user/mypage/myPostDelete
+exports.postMyPostDelete = (req, res) => {
+    console.log('Cuser에서 req.id 확인 >> ', req.body.id);
+
+    models.Post.destroy({
+        where:{id:req.body.id}
+    }).then((result) => {
+        console.log('result>> ', result);
+
+        res.send('삭제성공');
     })
 }

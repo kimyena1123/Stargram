@@ -19,13 +19,14 @@ function login(){
     }).then((res) => {
         return res.data;
     }).then((data) => { //res.send(false or true);
+        console.log('data 확인 >>>>>>> ', data);
 
         if(data){ // 로그인 성공 //data = true
             alert("로그인 성공");
             document.location.href="/"; //Main page로
         }else{ // 로그인 실패 // data = false
             alert('로그인 실패');
-            
+           
         }
     })
 }
