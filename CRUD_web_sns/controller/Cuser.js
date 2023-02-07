@@ -70,6 +70,36 @@ exports.postLogin = (req, res) => { //return res.data;
     })
 }
 
+//로그아웃
+//GET /user/logout
+exports.getLogout = (req, res) => {
+    console.log('로그아웃 후 세션 확인 >> ', req.session.user_id);
+    
+    if(req.session.user_id !== undefined){
+        //req.session.destroy(콜백)
+        //콜백 안에서 로그아웃 -> 리다이렉트
+        req.session.destroy((err) => {
+            if(err){
+                throw err;
+            }
+            res.send(`<script>
+                alert('로그아웃 되었습니다');
+                document.location.href="/";
+            </script>`)
+            //res.redirect("/");
+        });
+    }else{
+        res.send(
+            `
+            <script>
+                alert('잘못된 접근입니다');
+                document.location.href="/";
+            </script>
+            `
+        )
+    }
+}
+
 //마이페이지
 //GET /user/infoEdit
 exports.getmypageInfo = (req, res) => {

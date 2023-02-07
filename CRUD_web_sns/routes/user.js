@@ -13,6 +13,10 @@ router.get('/login', controller.getLogin);
 //POST /user/login
 router.post('/login', controller.postLogin);
 
+//[로그아웃 라우터]
+//GET /user/logout
+router.get('/logout', controller.getLogout);
+
 //GET /user/mypageInfo
 router.get('/mypageInfo', controller.getmypageInfo);
 //POST /user/mypage/userInfo
