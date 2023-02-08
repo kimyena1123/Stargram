@@ -1,0 +1,197 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+section{
+    width: 100%;
+    height: 88%;
+    display: flex;
+}
+.d-none{
+    display: none;
+}
+section nav{
+    width: 20%;
+    height: 80%;
+    margin: auto 0;
+    background-color: gray;
+    display: flex;
+    justify-content: center;
+}
+section ul{
+    width: 70%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-top: 100px;
+}
+section li{
+    border: 1px solid red;
+    margin-left: 30px;
+    font-size: 23px;
+    font-weight: 600;
+    list-style: none;
+    color: white;
+    cursor: pointer;
+    
+}
+section .content{
+    width: 80%;
+    display: flex;
+    background-color: skyblue;
+}
+section .section1{
+    width: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+section .prorfileImg{
+    width: 100%;
+    height: 80%;
+    background-color: white;
+    border: 3px solid purple;
+}
+section .explainText{
+    font-size: 23px;
+    font-weight: 600;
+    margin-left: 15px;
+}
+section .imgPosit{
+    width: 100%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 60px;
+    border: 1px solid red;
+}
+section #userImg{
+    border: 1px solid black;
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+}
+section .imgBtn{
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+.imgBtn button{
+    width: 270px;
+    height: 30px;
+    margin: 15px 0;
+}
+section .section2{
+    width: 65%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+section{
+    overflow: hidden;
+}
+section .userInfo{
+    width: 100%;
+    height: 80%;
+    border: 2px solid green;
+    background-color: #bbb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+section .inputTags{
+    width :80%;
+    height: 78%;
+    border: 3px solid black;
+    display: flex;
+    padding-bottom: 30px;
+    padding-top: 20px;
+    margin-top: 15px;
+}
+.section2 .labelTags{
+    width : 35%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    text-align: left;
+}
+.section2 .checkName{
+    padding-top: 10px;
+}
+.section2 .labelTags label{
+    margin: 19px;
+}
+.section2 .inputTags input{
+    width: 300px;
+    height: 40px;
+    margin: 10px 0;
+    margin-left: 10px;
+    border-radius: 10px;
+    border: none;
+}
+.section2 .checkbtn{
+    width: 70px;
+    height: 40px;
+    margin-left: 10px;
+    border-radius: 10px;
+    border: none;
+}
+.section2 .userInfoBtn{
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.section2 .userInfoBtn button{
+    width: 140px;
+    height: 40px;
+    margin-right: 15px;
+}
+.section2 .checkInputName input{
+    margin-bottom: 0;
+}
+.section2 .showText{
+    margin-left: 10px;
+    font-size: 14px;
+    color: red;
+}
+#secondSection .postDiv{
+    width: 80%;
+}
+#secondSection .subjectText{
+    padding-top: 40px;
+    height: 10%;
+    font-size: 20px;
+}
+#secondSection .posts{
+    height: 90%;
+    overflow-y: scroll;
+}
+#secondSection .myPostImgs{
+    margin: 0 auto;
+    width: 90%;
+    padding: 0 45px;
+    padding-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+}
+#secondSection .myPostImgs img{
+    width: 250px;
+    height: 250px;
+    margin: 0 70px;
+}
+#secondSection .imgBtn{
+    width: 290px;
+    margin: 0
+}
+#secondSection button{
+    width: 250px;
+    margin-left: 70px;
+}

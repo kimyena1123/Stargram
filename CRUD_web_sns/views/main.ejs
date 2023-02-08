@@ -6,14 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Main</title>
     <link rel = "stylesheet" href = "../static/css/main.css">
-    <link rel = "stylesheet" href = "../static/css/nav.css">
+    <link rel = "stylesheet" href = "../static/css/header.css">
 
 </head>
 <body>
     <div class = "container">
         <%- include ('./header.ejs') %>
-        <section><h1>Main page</h1></section>
-        <footer>footer</footer>
+        <section>
+            <% for(let i = 0; i < data.length; i ++) { %>
+            <div class="post">
+                <%= data[i].user.user_id %> <!-- user 테이블의 user_id -->
+                게시자: <span><%= data[i].userId %></span>
+                <img src="<%= data[i].img_src %>">
+                문구 : <span> <%= data[i].content %></span>
+
+                <% for(let j=0; j < data[i].comments.length; j++){ %>
+                <div>댓글유저: <span><%= data[i].comments[j].userId %></span></div>
+                <div>댓글: <span> <%= data[i].comments[j].content %></span></div>
+                <% } %>
+            </div>
+            <% } %>
+        </section>
     </div>
 </body>
 </html>

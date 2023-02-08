@@ -5,15 +5,19 @@
 }
 .container{
     width: 100vw;
+    height: 100vh;
     display: flex;
     flex-direction: column;
 }
-
 section{
     background: yellow;
-    height: 500px;
+    height: 88%;
+    overflow-y: scroll;
 }
-footer{
-    background: green;
-    height: 100px;
+section .post{
+    width: 40%;
+    height: 80%;
+    margin: 0 auto;
+    margin-top: 60px;
+    border: 2px solid black;
 }

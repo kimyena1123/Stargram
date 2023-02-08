@@ -18,8 +18,11 @@ app.use(
 );
 
 //라우터 분리
-const indexRouter = require('./routes/index');
-app.use('/', indexRouter);
+// const indexRouter = require('./routes/index');
+// app.use('/', indexRouter);
+
+const postRouter = require('./routes/post');
+app.use('/', postRouter);
 
 const userRouter = require('./routes/user');
 app.use('/user', userRouter);
