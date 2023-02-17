@@ -3,7 +3,7 @@ const models = require('../models');
 
 //sequelize 쿼리문
 // findAll() - select
-// findOne() - select
+// findOne() - select - LIMIT 1
 // create() - insert
 // update() - update
 // destroy() - delete

@@ -2,7 +2,7 @@ const express = require('express');
 const controller = require('../controller/Cuser');
 const router = express.Router();
 
-//localhost: PORT/sign
+//localhost: PORT/user
 
 //GET /user/join
 router.get('/join', controller.getJoin);

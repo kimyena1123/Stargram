@@ -1,0 +1,125 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+}
+section{
+    width: 100%;
+    height: 100%;
+}
+section .postBox{
+    width: 50%;
+    height: 70%;
+    border: 1px solid black;
+    margin: 0 auto;
+    margin-top: 60px;
+}
+section .userInfoDiv{
+    width: 100%;
+    height: 10%;
+    border: 1px solid red;
+    display: flex;
+}
+section .userInfoDiv img{
+    width: 55px;
+    height: 55px;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+section p{
+    margin: auto 0;
+    margin-left: 15px;
+}
+section .postContents{
+    width: 100%;
+    height: 65%;
+    border: 1px solid blue;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+section .textContent{
+    width: 95%;
+    height: 42%;
+    border: 1px solid black;
+    margin: 0 auto;
+}
+section .inputText{
+    width: 100%;
+    display: inline-block;
+    /* word-break: break-all; */
+    height: 100%;
+    border: 1px solid red;
+    font-size: 18px;
+}
+section .pictures{
+    width: 95%;
+    height: 42%;
+    border: 1px solid orange;
+    margin: 0 auto;
+}
+section .jsImgs{
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+}
+section .pictures img{
+    border: 1px solid black;
+    width: 150px;
+    height: 99%;
+    margin: 0 30px;
+}
+section .postBtns{
+    width: 100%;
+    height: 25%;
+    border: 2px solid red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+section input[type="file"]{
+    position: absolute;
+    width: 0;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+}
+section #fileBtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    width: 70%;
+    height: 40px;
+}
+section .btnTwo{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+}
+section .uploadDiv{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+section #uploadBtn{
+    width: 90%;
+    height: 40px;
+    margin: 10px 0;
+}
+section .endSelect{
+    width: 20%;
+    height: 40px;
+}

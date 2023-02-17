@@ -16,10 +16,6 @@ const Post = function(Sequelize, DataTypes){
                 type: DataTypes.STRING(4096),
                 allowNull: false,
             },
-            img_src: {
-                type: DataTypes.BLOB,
-                allowNull: true,
-            },
             createdAt: {
                 type: DataTypes.DATE,
                 allowNull: false,

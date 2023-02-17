@@ -39,3 +39,13 @@ exports.main = (req, res) => {
     }
 
 };
+
+exports.getPost = (req, res) => {
+    models.User.findOne({
+        where: {
+            id: req.session.user_index,
+        }
+    }).then((result) => {
+        res.render('post', {isLogin: true, user:req.session.user_id, userData: result});
+    })
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시물 올리기</title>
+    <link rel = "stylesheet" href = "../static/css/header.css">
+    <link rel = "stylesheet" href="../static/css/post.css">
+</head>
+<body>
+    <div class="container">
+        <%- include ('./header.ejs') %>
+
+        <section>
+            <div class="postBox">
+                <div class="userInfoDiv">
+                    <img src="<%= userData.profile_img %>">
+                    <p><%= userData.user_name %></p>
+                </div>
+                <div class="postContents">
+                    <div class="textContent">
+                        <textarea class="inputText" placeholder="내용을 입력해주세요" name="post_content"></textarea>
+                    </div>
+                    <div class="pictures">
+                        <div class="jsImgs">
+                            <img src="#" name="post_imgs">
+                            <img src="#">
+                            <img src="#">
+                            <img src="#">
+                            <img src="#">
+                            <img src="#">
+                        </div>
+                    </div>
+                </div>
+                <div class="postBtns">
+                    <div class="btnTwo">
+                        <label for="img" class="PostBtn" id="fileBtn">CHOOSE A FILE</label>
+                        <input type="file" name="img" id="absoluteFile" class="fileInput">
+                        <button type="button" class="endSelect">선택완료</button>
+                    </div>
+                    <div class="uploadDiv">
+                        <button type="button" class="PostBtn" id="uploadBtn">upload</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+
+        
+    </script>
+</body>
+</html>
