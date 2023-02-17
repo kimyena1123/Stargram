@@ -17,7 +17,10 @@
             <div class="post">
                 <%= data[i].user.user_id %> <!-- user 테이블의 user_id -->
                 게시자: <span><%= data[i].userId %></span>
-                <img src="<%= data[i].img_src %>">
+
+                <% for(let j=0; j < data[i].postImgs.length; j++){ %>
+                    <img src="<%= data[i].postImgs[j].img_src %>">
+                <% } %>
                 문구 : <span> <%= data[i].content %></span>
 
                 <% for(let j=0; j < data[i].comments.length; j++){ %>

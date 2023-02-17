@@ -16,7 +16,7 @@ db.Sequelize = Sequelize;
 
 db.User = require('./User')(sequelize, Sequelize);
 db.Post = require('./Post')(sequelize, Sequelize);
-db.PostImgs = require('./PostImgs', sequelize, Sequelize);
+db.PostImgs = require('./PostImgs')(sequelize, Sequelize);
 db.Comment = require('./Comment')(sequelize, Sequelize);
 db.Likes = require('./Likes')(sequelize, Sequelize);
 db.Channel = require('./Channel')(sequelize, Sequelize);
@@ -30,6 +30,7 @@ db.User.hasMany(db.Channel, {foreignKey: 'userId'});
 db.User.hasMany(db.Chat, {foreignKey: 'userId'});
 db.User.hasMany(db.Message, {foreignKey: 'userId'});
 
+db.Post.hasMany(db.PostImgs, {foreignKey: 'postId'});
 db.Post.hasMany(db.Comment, {foreignKey: 'postId'});
 db.Post.hasMany(db.Likes, {foreignKey: 'postId'});
 db.Post.belongsTo(db.User, {foreignKey: 'userId'});

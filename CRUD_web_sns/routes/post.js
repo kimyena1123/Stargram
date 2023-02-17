@@ -14,6 +14,6 @@ router.get('/', controller.main);
 router.get('/post', controller.getPost);
 
 //게시물 upload
-router.post('/post/upload', controller.postUpload);
+//router.post('/post/upload', controller.postUpload);
 
 module.exports = router;

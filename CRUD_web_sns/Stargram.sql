@@ -29,6 +29,15 @@ CREATE TABLE `user`(
     ON DELETE CASCADE
  )ENGINE=InnoDB DEFAULT CHARSET = utf8mb4;
 
+INSERT INTO `post` (userId, content, createdAt, updatedAt)
+VALUE (1, '첫 게시물!', now(), now());
+
+INSERT INTO `post` (userId, content, createdAt, updatedAt)
+VALUE (1, '1번 user의 두번째 게시물!', now(), now());
+ 
+INSERT INTO `post` (userId, content, createdAt, updatedAt)
+VALUE (2, '나는 2번.', now(), now());
+ 
   CREATE TABLE `postImgs`(
 	`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     `postId` INT NOT NULL,
@@ -41,15 +50,16 @@ CREATE TABLE `user`(
     ON DELETE CASCADE
  )ENGINE=InnoDB DEFAULT CHARSET = utf8mb4;
 
-INSERT INTO `post` (userId, content, img_src, createdAt, updatedAt)
-VALUE (3, '첫 게시물!', 'https://blog.kakaocdn.net/dn/bTEhUV/btqECug9iOs/mxgZUk4MLJVCK3xtcNe6NK/img.jpg', now(), now());
- 
-INSERT INTO `post` (userId, content, img_src, createdAt, updatedAt)
-VALUE (3, '첫 게시물!', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzuvA59GPi-APl7owF6UjLQt8Kr91iJ1vDxg&usqp=CAU', now(), now());
- 
-INSERT INTO `post` (userId, content, img_src, createdAt, updatedAt)
-VALUE (4, '풍경이 예뻐요', 'https://cdn.pixabay.com/photo/2019/08/01/12/36/illustration-4377408_960_720.png', now(), now());
-  
+INSERT INTO `postImgs` (postId, img_src, createdAt, updatedAt)
+VALUE (1, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToHXwJs8bT07WPe-0Akeu6bPfD4wvS-FSyyA&usqp=CAU', now(), now());
+
+INSERT INTO `postImgs` (postId, img_src, createdAt, updatedAt)
+VALUE (1, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHrpRSfTLi2rBRndWJXQmrbGre27t-U16xRg&usqp=CAU', now(), now());
+
+INSERT INTO `postImgs` (postId, img_src, createdAt, updatedAt)
+VALUE (2, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgdI6-mqkGJu5Oyo3Co59rHENy49LFjGM1QQ&usqp=CAU', now(), now());
+
+
  CREATE TABLE `comment`(
 	`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     `userId` INT NOT NULL,
@@ -60,6 +70,18 @@ VALUE (4, '풍경이 예뻐요', 'https://cdn.pixabay.com/photo/2019/08/01/12/36
     FOREIGN KEY(userId) references user(id) ON UPDATE CASCADE ON DELETE CASCADE,
     FOREIGN KEY(postId) references post(id) ON UPDATE CASCADE ON DELETE CASCADE
  )ENGINE=InnoDB DEFAULT CHARSET = utf8mb4;
+
+ INSERT INTO `comment` (userId, postId, content, createdAt, updatedAt)
+ VALUE (2, 1, '강아지 귀여워', now(), now());
+
+  INSERT INTO `comment` (userId, postId, content, createdAt, updatedAt)
+ VALUE (2, 1, '사진 더 없어?? ', now(), now());
+
+  INSERT INTO `comment` (userId, postId, content, createdAt, updatedAt)
+ VALUE (1, 3, '풍경 good', now(), now());
+
+  INSERT INTO `comment` (userId, postId, content, createdAt, updatedAt)
+ VALUE (2, 2, '강아지가 아니라 풍경인데??', now(), now());
  
  CREATE TABLE `likes`(
 	`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,

@@ -6,6 +6,9 @@ exports.main = (req, res) => {
         models.Post.findAll({
             include: [
                 {
+                    model: models.PostImgs,
+                },
+                {
                     model: models.User,
                 },
                 {
@@ -21,6 +24,9 @@ exports.main = (req, res) => {
     }else{
         models.Post.findAll({
             include: [
+                {
+                    model: models.PostImgs,
+                },
                 {
                     model: models.User,
                 },

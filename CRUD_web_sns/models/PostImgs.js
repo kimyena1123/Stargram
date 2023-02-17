@@ -23,7 +23,7 @@ const PostImgs = function(Sequelize, DataTypes){
             updatedAt: {
                 type: DataTypes.DATE,
                 allowNull: false,
-            }
+            },
         },
         {
             tableName: 'postImgs',
